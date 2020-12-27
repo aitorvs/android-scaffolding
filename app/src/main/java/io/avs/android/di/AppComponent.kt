@@ -23,12 +23,16 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import io.avs.android.App
 import io.avs.android.di.scopes.AppScope
+import io.avs.dummy.DummyModule
 import javax.inject.Singleton
 
 @Singleton
 @MergeComponent(
   scope = AppScope::class,
-  modules = [AndroidSupportInjectionModule::class]
+  modules = [
+    AndroidSupportInjectionModule::class,
+    DummyModule::class
+  ]
 )
 interface AppComponent : AndroidInjector<App> {
   @Component.Builder
